@@ -21,13 +21,47 @@ for page in document:
 print(full_text)
 
 
+
+
+# The chunk size for the files
 chunk_size=1000
 
+
+# List where chunks are stored
 chunks=[]
 
-for i in range(0,len(full_text),chunk_size):
-    chunk=full_text[i:i+chunk_size]
+
+
+
+# for i in range(0,len(full_text),chunk_size):
+    # Chunk text size start from the previous end to 1000 characters
+    # chunk=full_text[i:i+chunk_size] 
+    # Append the chunk files which are created in the list where is chunk is stored
+    # chunks.append(chunk)
+
+
+
+
+# Add overlap logic to preserve context between chunks (basically having some 
+# parts of the previous chunk in the current chunk)
+
+overlap=200
+
+start=0
+
+while start<len(full_text):
+    end=start+chunk_size
+    chunk=full_text[start:end]
     chunks.append(chunk)
+    start=end-overlap
 
 
 
+
+
+
+for chunk in chunks:
+    print("\n----CHUNK----")
+    print(chunk)
+
+print("Number of chunks:", len(chunks))
