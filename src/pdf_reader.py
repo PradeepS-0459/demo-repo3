@@ -21,3 +21,13 @@ for page in document:
 print(full_text)
 
 
+chunk_size=1000
+
+chunks=[]
+
+for i in range(0,len(full_text),chunk_size):
+    chunk=full_text[i:i+chunk_size]
+    chunks.append(chunk)
+
+
+
