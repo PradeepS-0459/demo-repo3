@@ -1,4 +1,27 @@
+from numpy import size
+import fitz
 from sentence_transformers import SentenceTransformer
+
+# Location of the file
+pdf_path=r"C:\Users\Pradeep S\Desktop\PROJECTS\RAG\demo-repo3\data\papers\A_Simulation-based_Online_Evolutionary_Algorithm_for_Combat_in_StarCraft_II.pdf"
+
+document=fitz.open(pdf_path)
+
+full_text=""
+
+for page in document:
+    text=page.get_text()
+    full_page+=text
+
+
+chunk_size=1000
+overlap=200
+chunks=[]
+start=0
+
+while start<len(full_text):
+    end=start+chunk_size
+
 
 
 # We have loaded the enbedding model here
