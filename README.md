@@ -28,8 +28,3 @@ This project is an AI assistant that helps us find information from research pap
 - **Streamlit** – Create the simple web interface.
 - **Git/GitHub** – Save and manage the project.
 
-## Main Goal
-
-The main goal is to make it easier to understand and search multiple research papers without manually going through every page.
-
-We will build this project step by step and learn each concept when we need it.
