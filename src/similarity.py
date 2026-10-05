@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import pymupdf
 from sentence_transformers import SentenceTransformer
-
+from generator import generate_answer
 
 pdf_path=r"C:\Users\Pradeep S\Desktop\PROJECTS\RAG\demo-repo3\data\papers\A_Simulation-based_Online_Evolutionary_Algorithm_for_Combat_in_StarCraft_II.pdf"
 
@@ -66,7 +66,12 @@ print("Retireved text :", chunks[best])
 
 
 
+context = chunks[best]
 
+answer = generate_answer(context, question)
+
+print("\nAnswer:")
+print(answer)
 
 
 
